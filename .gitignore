@@ -1,0 +1,21 @@
+# Dependências do Node (NUNCA envie isso)
+node_modules/
+
+# Logs de erro e debug
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+logs/
+*.log
+
+# Arquivos de Sistema Operacional (Lixo gerado pelo Windows/Mac)
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Variáveis de Ambiente (Segurança - para não vazar senhas)
+.env
+
+# Configurações de IDE (Opcional, mas recomendado)
+.vscode/
+.idea/

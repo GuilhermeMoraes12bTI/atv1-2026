@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torcedor App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle">🌙 Tema Escuro</button>
+
+    <div class="container">
+        <div id="register-screen" class="screen active">
+            <h2>Cadastro de Torcedor</h2>
+            <form id="register-form">
+                <input type="text" id="reg-name" placeholder="Nome" required>
+                <input type="number" id="reg-age" placeholder="Idade" required>
+                <input type="text" id="reg-team" placeholder="Time do Coração" required>
+                <input type="password" id="reg-pass" placeholder="Senha" required>
+                <button type="submit" class="btn btn-green">Cadastrar</button>
+            </form>
+            <p>Já tem conta? <a href="#" onclick="app.showScreen('login-screen')">Fazer Login</a></p>
+        </div>
+
+        <div id="login-screen" class="screen hidden">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="login-name" placeholder="Nome" required>
+                <input type="password" id="login-pass" placeholder="Senha" required>
+                <button type="submit" class="btn btn-blue">Entrar</button>
+            </form>
+            <p>Não tem conta? <a href="#" onclick="app.showScreen('register-screen')">Cadastre-se</a></p>
+        </div>
+
+        <div id="dashboard-screen" class="screen hidden">
+            <div class="card">
+                <h3>Perfil do Torcedor</h3>
+                <div class="info">
+                    <p><strong>Nome:</strong> <span id="dash-name"></span></p>
+                    <p><strong>Idade:</strong> <span id="dash-age"></span> anos</p>
+                    <p><strong>Time:</strong> <span id="dash-team" class="highlight"></span></p>
+                </div>
+                <div class="actions">
+                    <button onclick="app.logout()" class="btn btn-red">Sair (Logout)</button>
+                    <button onclick="app.newUser()" class="btn btn-green">Adicionar Novo Usuário</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

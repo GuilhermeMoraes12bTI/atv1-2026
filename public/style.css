@@ -1,0 +1,56 @@
+:root {
+    /* Cores da Paleta */
+    --primary-blue: #0056b3;
+    --primary-green: #28a745;
+    --dark-green: #1e7e34;
+    --light-blue: #e3f2fd;
+    
+    /* Tema Claro (Default) */
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --input-bg: #fff;
+    --input-border: #ccc;
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --input-bg: #2c2c2c;
+    --input-border: #444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; transition: all 0.3s ease; }
+
+body { background-color: var(--bg-color); color: var(--text-color); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+
+.container { width: 100%; max-width: 400px; padding: 20px; }
+
+/* Cards e Telas */
+.screen { display: none; text-align: center; background: var(--card-bg); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.screen.active { display: block; animation: fadeIn 0.5s; }
+.hidden { display: none; }
+
+h2, h3 { color: var(--primary-blue); margin-bottom: 20px; }
+.highlight { color: var(--primary-green); font-weight: bold; }
+
+/* Formulários */
+input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--input-border); border-radius: 5px; background: var(--input-bg); color: var(--text-color); }
+
+/* Botões */
+.btn { width: 100%; padding: 12px; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; margin-top: 10px; }
+.btn-blue { background-color: var(--primary-blue); }
+.btn-green { background-color: var(--primary-green); }
+.btn-green:hover { background-color: var(--dark-green); }
+.btn-red { background-color: #dc3545; }
+
+/* Botão de Tema */
+#theme-toggle { position: absolute; top: 20px; right: 20px; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--primary-blue); background: transparent; color: var(--text-color); cursor: pointer; }
+
+/* Dashboard Info */
+.info p { margin: 10px 0; font-size: 1.1rem; border-bottom: 1px solid var(--input-border); padding-bottom: 5px; }
+.actions { display: flex; gap: 10px; margin-top: 20px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
